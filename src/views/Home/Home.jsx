@@ -1,20 +1,20 @@
 import { useEffect } from 'react';
-import MonsterList from '../../components/MonsterList/MonsterList';
-import { fetchMonsters } from '../../services/monsters';
+import HyruleList from '../../components/HyruleList/HyruleList';
+import { fetchData } from '../../services/hyrule';
 
 export default function Home() {
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchMonsters();
+    const fetchHyrule = async () => {
+      const data = await fetchData();
       console.log(data);
     };
-    fetchData();
+    fetchHyrule();
   }, []);
 
   return (
     <>
       <div>Home</div>
-      <MonsterList />
+      <HyruleList />
     </>
   );
 }
