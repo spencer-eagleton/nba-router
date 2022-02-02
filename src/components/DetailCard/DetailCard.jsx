@@ -1,5 +1,5 @@
 export default function DetailCard({ hyruleEntry }) {
-  const { image, name, description, common_locations, id } = hyruleEntry;
+  const { image, name, description, common_locations } = hyruleEntry;
   return (
     <div>
       <h1>{name}</h1>
