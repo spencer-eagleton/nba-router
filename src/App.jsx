@@ -1,5 +1,5 @@
 import { Switch, Route, BrowserRouter, Link } from 'react-router-dom';
-import HyruleDetail from './components/HyruleDetail/HyruleDetail';
+import HyruleDetail from './views/HyruleDetail/HyruleDetail';
 import HyruleList from './components/HyruleList/HyruleList';
 
 import Home from './views/Home/Home';
