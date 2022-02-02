@@ -1,6 +1,6 @@
 import { fetchData } from '../../services/hyrule';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 export default function HyruleList() {
   const [hyruleData, setHyruleData] = useState([]);
   const { category } = useParams();
@@ -20,8 +20,10 @@ export default function HyruleList() {
       <div>
         {hyruleData.map((item) => (
           <>
-            <p>{item.name}</p>
-            <img src={item.image} />
+            <Link to={`/entry/${item.id}`}>
+              <p>{item.name}</p>
+              <img src={item.image} />
+            </Link>
           </>
         ))}
       </div>
