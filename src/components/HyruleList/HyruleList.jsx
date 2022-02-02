@@ -17,7 +17,14 @@ export default function HyruleList() {
   return (
     <>
       <div>Hyrule List</div>
-      <div></div>
+      <div>
+        {hyruleData.map((item) => (
+          <>
+            <p>{item.name}</p>
+            <img src={item.image} />
+          </>
+        ))}
+      </div>
     </>
   );
 }

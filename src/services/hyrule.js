@@ -4,5 +4,5 @@ export async function fetchData(category) {
   );
   const data = await resp.json();
   console.log(data);
-  return data;
+  return data.data;
 }
