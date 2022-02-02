@@ -25,6 +25,7 @@ export default function App() {
           <HyruleList />
         </Route>
       </Switch>
+      <footer></footer>
     </BrowserRouter>
   );
 }
