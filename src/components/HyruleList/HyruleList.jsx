@@ -21,7 +21,7 @@ export default function HyruleList() {
         {hyruleData.map((item) => (
           <div key={item.id}>
             <Link to={`/entry/${item.id}`}>
-              <p>{item.name}</p>
+              <h3>{item.name}</h3>
               <img src={item.image} />
             </Link>
           </div>

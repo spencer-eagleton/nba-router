@@ -13,12 +13,19 @@ export default function HyruleDetail() {
     };
     fetchHyruleById();
   }, [entry]);
+
+  const { image, name, description, common_locations } = hyruleEntry;
   return (
     <>
+      {console.log(common_locations)}
       <h1>Hyrule Detail</h1>
       <div>
-        <h1>{hyruleEntry.name}</h1>
-        <img src={hyruleEntry.image} />
+        <h1>{name}</h1>
+        <img src={image} />
+        <p>{description}</p>
+        {common_locations?.map((item) => (
+          <p>{item}</p>
+        ))}
       </div>
     </>
   );
