@@ -19,12 +19,12 @@ export default function HyruleList() {
       <div>Hyrule List</div>
       <div>
         {hyruleData.map((item) => (
-          <>
+          <div key={item.id}>
             <Link to={`/entry/${item.id}`}>
               <p>{item.name}</p>
               <img src={item.image} />
             </Link>
-          </>
+          </div>
         ))}
       </div>
     </>
