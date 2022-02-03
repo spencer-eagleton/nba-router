@@ -6,6 +6,7 @@ export default function HyruleList() {
   const [loading, setLoading] = useState(true);
   const [hyruleData, setHyruleData] = useState([]);
   const { category } = useParams();
+  console.log('category', category);
 
   useEffect(() => {
     const fetchHyrule = async () => {
