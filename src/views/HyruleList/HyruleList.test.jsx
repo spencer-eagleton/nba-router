@@ -17,7 +17,6 @@ test('renders monsters', async () => {
     {},
     { timeout: 3000 }
   );
-  screen.debug();
 
   expect(monsterName).toBeInTheDocument();
 });
