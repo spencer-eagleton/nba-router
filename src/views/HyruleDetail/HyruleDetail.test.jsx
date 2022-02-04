@@ -4,6 +4,8 @@ import { setupServer } from 'msw/node';
 import { monsterData } from '../../utils/mockData';
 import HyruleDetail from './HyruleDetail';
 import { MemoryRouter, Route } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
+import Home from '../Home/Home';
 
 const server = setupServer(
   rest.get(
@@ -58,4 +60,29 @@ test('renders hyrule detail header', async () => {
     { timeout: 3000 }
   );
   expect(detailHeader).toBeInTheDocument();
+});
+
+test('back to home button appears, and then takes user to home view', async () => {
+  render(
+    <MemoryRouter initialEntries={['/entry/156']}>
+      <Route path="/entry">
+        <HyruleDetail />
+      </Route>
+    </MemoryRouter>
+  );
+
+  const bthButton = await screen.findByRole('button', {}, { timeout: 3000 });
+  expect(bthButton).toBeInTheDocument();
+
+  userEvent.click(bthButton);
+
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <Route path="/">
+        <Home />
+      </Route>
+    </MemoryRouter>
+  );
+  const homeTxt = await screen.findByText(/home/i);
+  expect(homeTxt).toBeInTheDocument();
 });
