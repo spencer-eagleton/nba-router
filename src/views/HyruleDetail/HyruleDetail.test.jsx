@@ -18,7 +18,7 @@ beforeAll(() => server.listen());
 
 afterAll(() => server.close());
 
-test.only('renders monster detail', async () => {
+test('renders cursed bokoblin detail', async () => {
   render(
     <MemoryRouter initialEntries={['/entry/156']}>
       <Route path="/entry/:entry">
@@ -27,12 +27,35 @@ test.only('renders monster detail', async () => {
     </MemoryRouter>
   );
 
+  const detailHeader = await screen.findByText(
+    /hyrule detail/i,
+    {},
+    { timeout: 3000 }
+  );
+  expect(detailHeader).toBeInTheDocument();
+
   const monsterName = await screen.findByText(
     /cursed bokoblin/i,
     {},
     { timeout: 3000 }
   );
-  screen.debug();
 
   expect(monsterName).toBeInTheDocument();
+});
+
+test('renders hyrule detail header', async () => {
+  render(
+    <MemoryRouter initialEntries={['/entry/156']}>
+      <Route path="/entry/:entry">
+        <HyruleDetail />
+      </Route>
+    </MemoryRouter>
+  );
+
+  const detailHeader = await screen.findByText(
+    /hyrule detail/i,
+    {},
+    { timeout: 3000 }
+  );
+  expect(detailHeader).toBeInTheDocument();
 });
