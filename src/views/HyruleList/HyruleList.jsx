@@ -2,6 +2,7 @@ import { fetchData } from '../../services/hyrule';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import List from '../../components/List/List';
+
 export default function HyruleList() {
   const [loading, setLoading] = useState(true);
   const [hyruleData, setHyruleData] = useState([]);
@@ -22,7 +23,9 @@ export default function HyruleList() {
   return (
     <>
       <div>Hyrule List</div>
-      <List hyruleData={hyruleData} />
+      <div class>
+        <List hyruleData={hyruleData} />
+      </div>
     </>
   );
 }

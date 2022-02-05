@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap');
+
+.hyrule_list {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+img {
+  width: 500px;
+  margin: 25px;
+  border-radius: 10px;
+  opacity: 80%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Chakra Petch', sans-serif;
+}

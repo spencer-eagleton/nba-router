@@ -1,0 +1,11 @@
+body {
+  background-image: url(./assets/botw.jpg);
+  background-size: 2200px 1300px;
+  background-repeat: no-repeat;
+  height: 1300px;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+link {
+  margin: 20px;
+}
