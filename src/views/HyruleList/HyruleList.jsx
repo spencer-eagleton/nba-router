@@ -1,29 +1,15 @@
-import { fetchData } from '../../services/hyrule';
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import List from '../../components/List/List';
+import { useHyruleData } from '../../hooks/HyruleData/HyruleData';
 
 export default function HyruleList() {
-  const [loading, setLoading] = useState(true);
-  const [hyruleData, setHyruleData] = useState([]);
-  const { category } = useParams();
-  console.log('category', category);
-
-  useEffect(() => {
-    const fetchHyrule = async () => {
-      setLoading(true);
-      const data = await fetchData(category);
-      setHyruleData(data);
-      setLoading(false);
-    };
-    fetchHyrule();
-  }, [category]);
+  const { hyruleData, loading } = useHyruleData();
 
   if (loading) return <h3>Loading...</h3>;
   return (
     <>
       <div>Hyrule List</div>
-      <div class>
+      <div>
         <List hyruleData={hyruleData} />
       </div>
     </>

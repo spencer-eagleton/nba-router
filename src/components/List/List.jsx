@@ -8,7 +8,7 @@ export default function List({ hyruleData }) {
         <div key={item.id}>
           <Link to={`/entry/${item.id}`}>
             <div className={styles.card}>
-              <img classname={styles.list_img} src={item.image} />
+              <img className={styles.list_img} src={item.image} />
               <h3>{item.name}</h3>
             </div>
           </Link>
